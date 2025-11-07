@@ -54,8 +54,8 @@ export default function Home() {
               muted
               playsInline
               className="w-full h-full object-cover"
-            />
-            
+            ></video>
+
             {/* Checkmark Overlay */}
             <div className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-8 md:left-10 lg:left-12 w-[50px] h-[50px] md:w-[60px] md:h-[60px] lg:w-[67.5px] lg:h-[67.5px] rounded-full bg-[#1C4ED1] flex items-center justify-center">
               <svg 
