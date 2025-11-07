@@ -47,11 +47,12 @@ export default function Home() {
         <div className="flex items-center gap-3 md:gap-[10px] w-full lg:w-auto justify-center">
           {/* MAIN BRANDED BOTTLE CONTAINER */}
           <div className="relative w-[200px] md:w-[280px] lg:w-[410px] h-[300px] md:h-[400px] lg:h-[497px] rounded-[20px] md:rounded-[25px] bg-[#040B37] overflow-hidden flex items-center justify-center">
-            <Image
+            <video
               src="/brand-container-video.mp4"
-              alt="Branded Container"
-              width={410}
-              height={497}
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
             
