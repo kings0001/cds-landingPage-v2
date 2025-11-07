@@ -1,65 +1,84 @@
 import Image from "next/image";
+import VideoPreviewPlayer from "./components/VideoPreviewPlayer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-white text-[#020839] overflow-hidden">
+      <VideoPreviewPlayer />
+    
+      <section className="flex flex-col md:flex-row items-center justify-between gap-10 bg-[#F6F8FF] p-6 md:p-16 rounded-3xl">
+      {/* LEFT TEXT SECTION */}
+      <div className="flex-1 max-w-lg text-center md:text-left space-y-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#0B0B0C]">
+          Same Product.{" "}
+          <span className="text-[#2458E8] italic font-medium">
+            Different Story.
+          </span>
+        </h2>
+        <p className="text-[#121212] text-base md:text-lg">
+          Both serve their purpose, but only <strong>the branded one</strong> is
+          remembered.
+        </p>
+
+        <p className="text-[#555] text-sm md:text-base leading-relaxed">
+          Two products. One plain, one branded.
+          <br />
+          Both clean, but only one gets chosen, remembered, and requested.
+          <br />
+          Branding gives meaning to what people already need.
+        </p>
+
+        <button className="mt-4 px-6 py-2 bg-[#2458E8] hover:bg-[#1E47C5] text-white text-sm md:text-base font-medium rounded-full transition-all">
+          Let’s Build Your Brand
+        </button>
+      </div>
+
+      {/* RIGHT MEDIA SECTION */}
+      <div className="flex-1 flex justify-center items-center gap-4">
+        {/* MAIN VIDEO */}
+        <div className="relative w-[230px] md:w-[280px] aspect-2/4 overflow-hidden rounded-2xl bg-[#001B5A] flex justify-center items-center">
+          <video
+            src="/brand-container-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+          {/* Optional Overlay Icon */}
+          <div className="absolute bottom-3 left-3 bg-white text-[#2458E8] rounded-full p-2 text-xl">
+            ✓
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+        {/* STACKED IMAGES */}
+        <div className="flex flex-col justify-center gap-4">
+          <div className="relative w-[120px] md:w-[288px] aspect-square rounded-2xl overflow-hidden bg-linear-to-r from-[#072056] to-[#08129C]">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="images/unbranded_container.svg"
+              alt="Plain Bottle"
+              width={120}
+              height={200}
+              className="object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-full p-1 text-[#2458E8]">
+              ↓
+            </div>
+          </div>
+
+          <div className="relative w-[120px] md:w-[288px] aspect-square rounded-2xl overflow-hidden bg-linear-to-r from-[#072056] to-[#08129C]">
+            <Image
+              src="images/branded_container.svg"
+              alt="Branded Bottle"
+              width={120}
+              height={200}
+              className="object-cover"
+            />
+          </div>
         </div>
-      </main>
+      </div>
+    </section>
+    
     </div>
   );
 }
